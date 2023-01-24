@@ -206,7 +206,7 @@ def fnmatch_pathname_to_regex(pattern, directory_only: bool, negation: bool):
                 res.append('[{}]'.format(stuff))
         else:
             res.append(re.escape(c))
-    res.insert(0, '^(?ms)')
+    res.insert(0, '(?ms)')
     if not directory_only:
         res.append('$')
     if directory_only and negation:
